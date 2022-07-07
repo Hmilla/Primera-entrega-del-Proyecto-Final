@@ -44,7 +44,9 @@ const insertProductoByIdToCart = async (req,res)=>{
     
     const productInsert= await productosContenedor.getById(id)
     const item=productInsert[0]
-    if(!isNumber(id_cart)){return res.json({ error: "El parámetro no es un numero o el id no es correcto" })}
+    if(!isNumber(id_cart)){
+     return res.json({ error: "El parámetro no es un numero o el id no es correcto" 
+     })}
     if(!isNumber(id)|| productInsert.length==0){
         return res.json({ error: "El producto no existe" })
     }
